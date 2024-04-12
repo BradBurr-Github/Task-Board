@@ -4,7 +4,6 @@ const addTaskModal = document.getElementById("modal-add-task");
 // Retrieve tasks and nextId from localStorage
 let taskList = JSON.parse(localStorage.getItem("tasks"));
 let nextId = JSON.parse(localStorage.getItem("nextId"));
-var dialog;
 
 // Todo: create a function to generate a unique task id
 function generateTaskId() {
@@ -36,8 +35,50 @@ function handleDrop(event, ui) {
 
 }
 
+// Function to read Tasks from localStorage
+function readTasksFromStorage() {
+  let tasks = JSON.parse(localStorage.getItem('projects'));
+  if (!tasks) {
+    tasks = [];
+  }
+  return tasks;
+}
+
+// Function to save Tasks to localStorage
+function saveProjectsToStorage(tasks) {
+  localStorage.setItem('tasks', JSON.stringify(tasks));
+}
+
+function printTaskData() {
+  const tasks = readTasksFromStorage();
+
+  // ? Empty existing project cards out of the lanes
+  // const todoList = $('#todo-cards');
+  // todoList.empty();
+
+  // const inProgressList = $('#in-progress-cards');
+  // inProgressList.empty();
+
+  // const doneList = $('#done-cards');
+  // doneList.empty();
+
+  // // ? Loop through projects and create project cards for each status
+  // for (let project of projects) {
+  //   if (project.status === 'to-do') {
+  //     todoList.append(createProjectCard(project));
+  //   } else if (project.status === 'in-progress') {
+  //     inProgressList.append(createProjectCard(project));
+  //   } else if (project.status === 'done') {
+  //     doneList.append(createProjectCard(project));
+  //   }
+  }
+
 // Todo: when the page loads, render the task list, add event listeners, make lanes droppable, and make the due date field a date picker
 $(document).ready(function () {
+  $("#task-due-date").datepicker();
+  printTaskData();
+
+
 
 });
 
@@ -49,62 +90,8 @@ function addNewTask(event) {
 addTaskModal.addEventListener("submit", function(event) {
   event.preventDefault;
   //addNewTask(event);
+  $("task-title").val('');
   $('#formModal').modal('hide');
 });
 
 
-
-// // Define our dialog
-
-
-
-// $( function() {
-  
-//   // $("#dialog-task").dialog({
-//   //   autoOpen: false
-//   // });
-
-//   $( "#btn-add-task" ).on( "click", function() {
-//     $( "#dialog-task" ).dialog( "open" );
-//   });
-
-//   $( "#dialog-task" ).dialog({
-//     autoOpen: false,
-//     height: 400,
-//     width: 350,
-//     modal: true,
-//     buttons: {
-//       "Add Task": function() {
-//         addNewTask();
-//         $(this).dialog("close");
-//       }
-//     },
-//     close: function() {
-//       $(this).dialog("close");
-//     } });
-
-// } );
-
-
-// $( function() {
-//     var dialog, form,
- 
-//       // From http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#e-mail-state-%28type=email%29
-//       emailRegex = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/,
-//       name = $( "#name" ),
-//       email = $( "#email" ),
-//       password = $( "#password" ),
-//       allFields = $( [] ).add( name ).add( email ).add( password ),
-//       tips = $( ".validateTips" );
-// });
-
-
-
-    // form = dialog.find( "form" ).on( "submit", function( event ) {
-    //     event.preventDefault();
-    //     addUser();
-    //   });
-
-    // $( "#create-user" ).button().on( "click", function() {
-    //     dialog.dialog( "open" );
-    //   });
