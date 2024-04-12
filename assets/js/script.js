@@ -1,3 +1,6 @@
+// DOM variables
+const addTaskModal = document.getElementById("modal-add-task");
+
 // Retrieve tasks and nextId from localStorage
 let taskList = JSON.parse(localStorage.getItem("tasks"));
 let nextId = JSON.parse(localStorage.getItem("nextId"));
@@ -38,46 +41,49 @@ $(document).ready(function () {
 
 });
 
-// // Add Task button click event
-// $("#btn-add-task").button().on( "click", function() {
-//   debugger;
-//     dialog.dialog( "open" );
-//   });
-
-
 // Function to add a new task
 function addNewTask(event) {
-    event.preventDefault;
+  event.preventDefault;
 }
+
+addTaskModal.addEventListener("submit", function(event) {
+  event.preventDefault;
+  //addNewTask(event);
+  $('#formModal').modal('hide');
+});
+
+
 
 // // Define our dialog
 
 
 
-$( function() {
+// $( function() {
   
-  // $("#dialog-task").dialog({
-  //   autoOpen: false
-  // });
+//   // $("#dialog-task").dialog({
+//   //   autoOpen: false
+//   // });
 
-  $( "#btn-add-task" ).on( "click", function() {
-    $( "#dialog-task" ).dialog( "open" );
-  });
+//   $( "#btn-add-task" ).on( "click", function() {
+//     $( "#dialog-task" ).dialog( "open" );
+//   });
 
-  $( "#dialog-task" ).dialog({
-    autoOpen: false,
-    height: 400,
-    width: 350,
-    modal: true,
-    buttons: {
-      "Add Task": addNewTask
-    },
-    close: function() {
-      form[0].reset();
-      allFields.removeClass( "ui-state-error" );
-    } });
+//   $( "#dialog-task" ).dialog({
+//     autoOpen: false,
+//     height: 400,
+//     width: 350,
+//     modal: true,
+//     buttons: {
+//       "Add Task": function() {
+//         addNewTask();
+//         $(this).dialog("close");
+//       }
+//     },
+//     close: function() {
+//       $(this).dialog("close");
+//     } });
 
-} );
+// } );
 
 
 // $( function() {
