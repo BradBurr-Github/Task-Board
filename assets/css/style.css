@@ -1,5 +1,6 @@
 body {
   font-family: 'Open Sans', sans-serif;
+  background-color: rgb(43, 112, 129);
   font-size: 16px;
 }
 
@@ -13,4 +14,16 @@ body {
 
 .task-card:hover {
   cursor: grab;
+}
+
+header {
+  background-color: rgb(138, 207, 207);
+}
+
+.btn {
+  background-color: rgb(138, 207, 207);
+}
+
+.btn:hover {
+  background-color: gray;
 }

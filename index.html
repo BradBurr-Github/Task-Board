@@ -10,7 +10,6 @@
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
   <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
-
   <link rel="stylesheet" href="./assets/css/style.css" />
   <title>Task Board</title>
 </head>
@@ -22,9 +21,23 @@
   </header>
   <div class="container">
     <div class="text-center mb-5">
-      <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#formModal">Add Task</button>
+      <button class="btn btn-success" id="btn-add-task" data-bs-toggle="modal" data-bs-target="#formModal">Add Task</button>
     </div>
-    <!-- Todo: Create a modal with a form to add tasks -->
+    <!-- Modal Dialog -->
+    <!-- <div id="dialog-task" title="Add Task">
+      <form>
+        <fieldset>
+          <label for="task-title">Task Title</label>
+          <input type="text" name="task-title" id="task-title" class="text ui-widget-content ui-corner-all">
+          <label for="task-due-date">Task Due Date</label>
+          <input type="text" name="task-due-date" id="task-due-date" class="text ui-widget-content ui-corner-all">
+          <label for="task-desc">Task Description</label>
+          <input type="password" name="task-desc" id="task-desc" class="text ui-widget-content ui-corner-all"> -->
+          <!-- Allow form submission with keyboard without duplicating the dialog button -->
+          <!-- <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+        </fieldset>
+      </form>
+    </div> -->
     <div class="row swim-lanes text-center justify-content-between">
       <div class="col-12 col-lg-4 d-flex">
         <div id="to-do" class="card border-light mb-3 lane flex-grow-1">
