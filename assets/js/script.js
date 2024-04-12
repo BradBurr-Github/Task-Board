@@ -38,11 +38,11 @@ $(document).ready(function () {
 
 });
 
-// Add Task button click event
-$("#btn-add-task").button().on( "click", function() {
-  debugger;
-    dialog.dialog( "open" );
-  });
+// // Add Task button click event
+// $("#btn-add-task").button().on( "click", function() {
+//   debugger;
+//     dialog.dialog( "open" );
+//   });
 
 
 // Function to add a new task
@@ -50,21 +50,34 @@ function addNewTask(event) {
     event.preventDefault;
 }
 
-// Define our dialog
-dialog = $( "#dialog-task" ).dialog({
-  autoOpen: false,
-  height: 400,
-  width: 350,
-  modal: true,
-  buttons: {
-    "Add Task": addNewTask
-  },
-  close: function() {
-    form[0].reset();
-    allFields.removeClass( "ui-state-error" );
-  }
-});
+// // Define our dialog
 
+
+
+$( function() {
+  
+  // $("#dialog-task").dialog({
+  //   autoOpen: false
+  // });
+
+  $( "#btn-add-task" ).on( "click", function() {
+    $( "#dialog-task" ).dialog( "open" );
+  });
+
+  $( "#dialog-task" ).dialog({
+    autoOpen: false,
+    height: 400,
+    width: 350,
+    modal: true,
+    buttons: {
+      "Add Task": addNewTask
+    },
+    close: function() {
+      form[0].reset();
+      allFields.removeClass( "ui-state-error" );
+    } });
+
+} );
 
 
 // $( function() {

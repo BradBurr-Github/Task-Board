@@ -24,7 +24,18 @@
       <button class="btn btn-success" id="btn-add-task" data-bs-toggle="modal" data-bs-target="#formModal">Add Task</button>
     </div>
     <!-- Modal Dialog -->
-    <!-- <div id="dialog-task" title="Add Task">
+    <form id="dialog-task" title="Add Task">
+      <p>TEST</p>
+      <label for="task-title">Task Title</label>
+      <input type="text" name="task-title" id="task-title" class="text ui-widget-content ui-corner-all">
+      <label for="task-due-date">Task Due Date</label>
+          <input type="text" name="task-due-date" id="task-due-date" class="text ui-widget-content ui-corner-all">
+          <label for="task-desc">Task Description</label>
+          <input type="password" name="task-desc" id="task-desc" class="text ui-widget-content ui-corner-all">
+    </form>
+
+
+<!--       
       <form>
         <fieldset>
           <label for="task-title">Task Title</label>
