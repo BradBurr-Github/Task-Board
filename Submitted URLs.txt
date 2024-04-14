@@ -1,2 +1,0 @@
-repo: https://github.com/BradBurr-Github/Task-Board
-deploy: https://bradburr-github.github.io/Task-Board/
