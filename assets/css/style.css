@@ -8,11 +8,11 @@ header {
   background-color: rgb(138, 207, 207);
 }
 
-.btn {
+.btn-success {
   background-color: rgb(138, 207, 207);
 }
 
-.btn:hover {
+.btn-success:hover {
   background-color: gray;
 }
 
@@ -33,12 +33,6 @@ header {
   padding-right: 20px;
   padding-top: 10px;
   padding-bottom: 10px;
-}
-
-.center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 #add-new-task {
