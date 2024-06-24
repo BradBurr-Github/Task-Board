@@ -8,16 +8,25 @@ const btnModalAddTask = document.getElementById("btn-modal-add-task");
 
 // Function to read Tasks from localStorage
 function readTasksFromStorage() {
-  let tasks = JSON.parse(localStorage.getItem('tasks'));
-  if (!tasks) {
-    tasks = [];
+  try {
+    let tasks = JSON.parse(localStorage.getItem('tasks'));
+    if (!tasks) {
+      tasks = [];
+    }
+    return tasks;
+  } catch (error) {
+    alert(error);
   }
-  return tasks;
 }
 
 // Function to save Tasks to localStorage
 function saveTasksToStorage(tasks) {
-  localStorage.setItem('tasks', JSON.stringify(tasks));
+  try {
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+  }
+  catch {
+    alert(error);
+  }
 }
 
 // Function to Delete a Task
@@ -194,7 +203,7 @@ $(document).ready(function () {
 
 // Button click event to Add Task on MAIN page
 btnMainAddTask.addEventListener("click", function(event) {
-  event.preventDefault;
+  event.preventDefault();
   $("#task-title").val('');
   $("#task-due-date").val('');
   $("#task-desc").val('');
@@ -203,7 +212,7 @@ btnMainAddTask.addEventListener("click", function(event) {
 
 // Button submit event on modal dialog
 btnModalAddTask.addEventListener("click", function(event) {
-  event.preventDefault;
+  event.preventDefault();
   // Get input values
   const taskTitle = $("#task-title").val().trim();
   const taskDueDate = $("#task-due-date").val();
