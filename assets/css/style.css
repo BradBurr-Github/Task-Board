@@ -5,6 +5,8 @@ body {
 }
 
 header {
+  color: red;
+  font-family: Georgia, serif;
   background-color: rgb(138, 207, 207);
 }
 
